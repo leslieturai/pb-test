@@ -11,13 +11,16 @@ function App() {
     const [positions, setPositions] = useState([])
 
     useEffect(() => {
-      fetch("/map-update/").then((res) => {
-      res.json().then((data) => {
-      //console.log(data)
+     /*  const interval = setInterval(() => {
+            fetch("/map-update/").then((res) => {
+            res.json().then((data) => {
+            //console.log(data)
+            console.log("Updating!")
             setPositions(data)
-
-    })
-    })
+          })
+          })
+      }, 1200000)
+      return () => {clearInterval(interval)} */
     }, [])
 
 
