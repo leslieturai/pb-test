@@ -12,7 +12,12 @@ code {
     monospace;
 }
 
-.App div {
-  height: 1200px !important;
-  width: 1200px !important;
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+#test {
+  z-index: 20;
+  position: absolute;
 }

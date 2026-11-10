@@ -8,9 +8,7 @@ let url = `https://gtfsapi.translink.ca/v3/gtfsposition?apikey=d3Jb41aW5McmcEw0x
 
 
 const app = express()
-const port = 5000
-
-
+const port = 5000;
 
 
 app.get('/map-update', (req, res) => {
