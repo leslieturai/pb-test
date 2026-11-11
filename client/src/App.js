@@ -13,7 +13,7 @@ function App() {
     useEffect(() => {
 /*      const interval = setInterval(() => {
             fetch("/map-update/").then((res) => {
-            res.json().then((data) => {
+            res.json().then((data) => { 
             //console.log(data)
             console.log("Updating!")
             setPositions(data)
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
 
-    {/* <img id="test" src='https://britishcolumbia.com/images/maps/vancouver-downtown.gif' style={{top: "20%"}}></img> */}
+    
       
       
     <APIProvider apiKey={'AIzaSyDy-6rkV4XH2UXvyubcwT3PLH9H-Hef0vI'} onLoad={() => {console.log("Loaded!")}}>
@@ -40,7 +40,7 @@ function App() {
           <AdvancedMarker  position={{lat: 49.281895, lng: -123.124973}}
             anchorTop='-50%'
           >
-            <img src={require('./Images/Bus-1-3.png')}></img>
+            <img src={require('./Images/Bus-1-6.png')}></img>
           </AdvancedMarker>
           
           {positions !== null && positions !== undefined ? <>
