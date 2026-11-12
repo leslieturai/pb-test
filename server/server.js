@@ -27,9 +27,9 @@ const response = await fetch(url);
 
     let tempData = []
     feed.entity.forEach((entity, i) => {
-      if (i < 5) {
+      
        tempData.push(entity.vehicle.position)
-      }
+      
     })
 
     res.send(tempData)

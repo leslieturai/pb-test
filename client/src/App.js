@@ -11,7 +11,7 @@ function App() {
     const [positions, setPositions] = useState([])
 
     useEffect(() => {
-/*      const interval = setInterval(() => {
+     const interval = setInterval(() => {
             fetch("/map-update/").then((res) => {
             res.json().then((data) => { 
             //console.log(data)
@@ -19,17 +19,20 @@ function App() {
             setPositions(data)
           })
           })
-      }, 1200000)
-      return () => {clearInterval(interval)} */
+      }, 60000)
+      return () => {clearInterval(interval)}
     }, [])
 
   return (
     <div className="App">
-
+      <header>
+        <h1>OnlyBusses</h1>
+      </header>
     
       
       
-    <APIProvider apiKey={'AIzaSyDy-6rkV4XH2UXvyubcwT3PLH9H-Hef0vI'} onLoad={() => {console.log("Loaded!")}}>
+      <div className='map-div'>
+           <APIProvider apiKey={'AIzaSyDy-6rkV4XH2UXvyubcwT3PLH9H-Hef0vI'} onLoad={() => {console.log("Loaded!")}}>
       <Map
           defaultZoom={12}
           defaultCenter={position}
@@ -37,19 +40,27 @@ function App() {
           //onZoomChanged={(e) => {console.log(e.detail.zoom)}}  
           
         >
-          <AdvancedMarker  position={{lat: 49.281895, lng: -123.124973}}
+          {/* <AdvancedMarker  position={{lat: 49.281895, lng: -123.124973}}
             anchorTop='-50%'
           >
             <img src={require('./Images/Bus-1-6.png')}></img>
-          </AdvancedMarker>
+          </AdvancedMarker> */}
           
           {positions !== null && positions !== undefined ? <>
             {positions.map((e, i) => {
-              return <AdvancedMarker key={i} position={{lat: e.latitude, lng: e.longitude}}></AdvancedMarker>
+              return <AdvancedMarker key={i} position={{lat: e.latitude, lng: e.longitude}} anchorTop='-50%'>
+                <img src={require('./Images/Bus-1-6.png')}></img>
+              </AdvancedMarker>
             })}
           </>  : <></>}
       </Map>
     </APIProvider>
+
+      </div>
+
+      <footer>
+        
+      </footer>
     </div>
   );
 }
